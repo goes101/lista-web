@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista</title>
+</head>
+
+<body>
+
+  <h1>Criar Lista</h1>
+
+  <input id="texto" placeholder="Digite e aperte Enter">
+
+  <ul id="lista"></ul>
+
+  <script>
+    let input = document.getElementById("texto");
+    let lista = document.getElementById("lista");
+
+    input.addEventListener("keydown", function(e) {
+
+      if (e.key == "Enter") {
+
+        let item = document.createElement("li");
+
+        item.innerText = input.value;
+
+        item.onclick = function() {
+          item.remove();
+        }
+
+        lista.appendChild(item);
+
+        input.value = "";
+      }
+    });
+  </script>
+
+</body>
+</html>
